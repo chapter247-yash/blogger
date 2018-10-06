@@ -1,0 +1,11 @@
+<div class="container" *ngIf="userDetails">
+  <mat-toolbar>
+      <span class="fill-remaining-space"></span>
+      <span>Welcome {{userDetails.fullName | uppercase }}</span>
+      <span class="fill-remaining-space"></span>
+  </mat-toolbar>
+  <h2  routerLink="/userprofile"  routerLinkActive="active"> Add New Blog </h2>
+  <h2 routerLink="/viewBlogs"  routerLinkActive="active"> View Blogs </h2>
+  <h2 routerLink="/viewBlogs/demo"  routerLinkActive="active"> DemoBlogs </h2>
+  <router-outlet></router-outlet>
+</div>

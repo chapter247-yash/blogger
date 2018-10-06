@@ -1,0 +1,37 @@
+<mat-toolbar>
+    <span></span>
+    <span class="fill-remaining-space"></span>
+    <button class="btn-dialog-close" mat-stroked-button (click)="onClose()"><mat-icon>clear</mat-icon></button>
+  </mat-toolbar>
+<form [formGroup]="form"  class="normal-form">
+        <mat-grid-list cols="2" rowHeight="600px">  
+        <mat-grid-tile>
+          <div class="controles-container">
+            <input type="hidden" formControlName="_id">
+            <mat-form-field>
+              <input formControlName="title"  matInput placeholder="Title">
+              <mat-error>This field is mandatory.</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <textarea formControlName="shortDescription" matInput placeholder="Short Description"></textarea>
+              <mat-error>This field is mandatory.</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input formControlName="category" matInput placeholder="Category">
+              <mat-error >This field is mandatory.</mat-error>
+            </mat-form-field>
+            <div>
+              <h6>Full Description</h6>
+              <textarea id="editor1" formControlName="fullDescription" matInput placeholder="Full Description"></textarea>
+            </div>
+            <div class="button-row">
+                <button mat-raised-button color="primary" (click)="onSubmit(form.value)"  type="submit"> Submit </button>
+                <button mat-raised-button color="pink" (click)="onClear()">Clear</button>
+                </div>
+                <div class="button-row">
+                <button mat-raised-button color="warn" (click)="onLogout()" value="Logout" > Logout </button>
+              </div>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </form>
